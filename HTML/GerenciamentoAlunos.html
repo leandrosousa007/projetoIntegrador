@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<style>
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #d0f0c0; /* Cor verde pastel */
+    font-family: 'Roboto', sans-serif;
+    
+}
+
+#linksContainer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 10px;
+}
+
+.siteLink {
+    margin-right: 20px;
+    text-decoration: none;
+    color: white;
+    background-color: #4caf50; /* Cor verde */
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+form {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 900px; /* Tamanho máximo em dispositivos móveis */
+    width: 100%;
+    text-align: left;
+    box-sizing: border-box;
+    margin: 0 auto; /* Centraliza o formulário */
+}
+
+/* ... Seu estilo para o formulário ... */
+
+@media screen and (min-width: 650px) and (max-width: 2560px) {
+    form {
+        min-width: 500px;
+    }
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    color: #333; /* Cor padrão do texto */
+}
+
+input {
+    width: 100%; /* Alterado para ocupar a largura total do contêiner */
+    padding: 8px;
+    margin-bottom: 16px;
+    box-sizing: border-box;
+    border: 1px solid #ccc; /* Cor padrão da borda */
+}
+
+.campoObrigatorio {
+    color: red;
+}
+
+/* Adicione estilos específicos para a tabela de Alunos abaixo desta linha */
+
+</style>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+<title>Formulário da Tabela Aluno</title>
+</head>
+<body>
+    
+    <div id="linksContainer">
+        <a href="./index.html" class="siteLink">←</a>
+    </div>
+    
+    <div class="container">
+        <h2>Insira os dados do Aluno</h2>
+        <form id="formularioAluno">
+            
+            <label for="cod_aluno">Código do Aluno <span class="campoObrigatorio">*</span>:</label>
+            <input placeholder="Número inteiro" type="text" id="cod_aluno" name="cod_aluno" maxlength="20" required>
+            <div class="mensagemErro" id="erroCodAluno"></div>
+            
+            <label for="matricula">Matrícula <span class="campoObrigatorio">*</span>:</label>
+            <input placeholder="Somente número" type="text" id="matricula" name="matricula" maxlength="20" required>
+            <div class="mensagemErro" id="erroMatricula"></div>
+
+            <label for="nome">Nome <span class="campoObrigatorio">*</span>:</label>
+            <input placeholder="Nome completo" type="text" id="nome" name="nome" required>
+            <div class="mensagemErro" id="erroNome"></div>
+
+            <label for="rg">RG <span class="campoObrigatorio">*</span>:</label>
+            <input placeholder="Somente número" type="text" id="rg" name="rg" maxlength="10" required>
+            <div class="mensagemErro" id="erroRg"></div>
+
+            <label for="email">Email <span class="campoObrigatorio">*</span>:</label>
+            <input placeholder="Email do aluno" type="email" id="email" name="email" required>
+            <div class="mensagemErro" id="erroEmail"></div>
+
+            <label for="telefone">Telefone <span class="campoObrigatorio">*</span>:</label>
+            <input placeholder="Somente número" type="text" id="telefone" name="telefone" maxlength="20" required>
+            <div class="mensagemErro" id="erroTelefone"></div>
+
+            <label for="endereco">Endereço <span class="campoObrigatorio">*</span>:</label>
+            <input placeholder="Endereço completo" type="text" id="endereco" name="endereco" required>
+            <div class="mensagemErro" id="erroEndereco"></div>
+
+            <label for="sexo">Sexo <span class="campoObrigatorio">*</span>:</label>
+            <input placeholder="Somente um caracter" type="text" id="sexo" name="sexo"  maxlength="1" required>
+            <div class="mensagemErro" id="erroSexo"></div>
+
+            <label for="dataNasc">Data de Nascimento <span class="campoObrigatorio">*</span>:</label>
+            <input type="date" id="dataNasc" name="dataNasc" required>
+            <div class="mensagemErro" id="erroDataNasc"></div>
+
+            <label for="cod_responsavel">Código do Responsável <span class="campoObrigatorio">*</span>:</label>
+            <input placeholder="Número inteiro" type="text" id="cod_responsavel" name="cod_responsavel" maxlength="20" required>
+            <div class="mensagemErro" id="erroCodResponsavel"></div>
+
+            <label for="cod_curso">Código do Curso <span class="campoObrigatorio">*</span>:</label>
+            <input placeholder="Número inteiro" type="text" id="cod_curso" name="cod_curso" maxlength="20" required>
+            <div class="mensagemErro" id="erroCodCurso"></div>
+
+            <input type="submit" value="Enviar">
+            
+            <div id="mensagemSucesso" style="display: none; color: green;">
+                Inserido com sucesso!
+            </div>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('formularioAluno').addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            // Aqui você normalmente enviaria os dados do formulário para o servidor usando AJAX ou um envio de formulário
+            // e lidaria com a inserção no banco de dados no lado do servidor.
+
+            // Para fins deste exemplo, apenas exibiremos a mensagem de sucesso.
+            document.getElementById('mensagemSucesso').style.display = 'block';
+
+            // Resetar os valores do formulário após o envio
+            document.getElementById('matricula').value = '';
+            document.getElementById('nome').value = '';
+            document.getElementById('rg').value = '';
+            document.getElementById('email').value = '';
+            document.getElementById('telefone').value = '';
+            document.getElementById('endereco').value = '';
+            document.getElementById('sexo').value = '';
+            document.getElementById('dataNasc').value = '';
+            document.getElementById('cod_aluno').value = '';
+            document.getElementById('cod_responsavel').value = '';
+            document.getElementById('cod_curso').value = '';
+        });
+    </script>
+</body>
+</html>
