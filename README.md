@@ -1,4 +1,4 @@
-# projetoIntegrador
+# ProjetoIntegrador
 Projeto Integrador | Gestão de ocorrências disciplinares dos alunos
 
 Alunos:
