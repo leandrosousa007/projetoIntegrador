@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<style>
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #d0f0c0; /* Cor verde pastel */
+    font-family: 'Roboto', sans-serif;
+}
+
+#linksContainer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 10px;
+}
+
+.siteLink {
+    margin-right: 20px;
+    text-decoration: none;
+    color: white;
+    background-color: #4caf50; /* Cor verde */
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+form {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 900px; /* Tamanho máximo em dispositivos móveis */
+    width: 100%;
+    text-align: left;
+    box-sizing: border-box;
+    margin: 0 auto; /* Centraliza o formulário */
+}
+
+@media screen and (min-width: 650px) and (max-width: 2560px) {
+    form {
+        min-width: 500px;
+    }
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    color: #333; /* Cor padrão do texto */
+}
+
+input, select {
+    width: 100%; /* Alterado para ocupar a largura total do contêiner */
+    padding: 8px;
+    margin-bottom: 16px;
+    box-sizing: border-box;
+    border: 1px solid #ccc; /* Cor padrão da borda */
+}
+
+.campoObrigatorio {
+    color: red;
+}
+</style>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+<title>Formulário de Gerenciamento de Curso</title>
+</head>
+<body>
+    
+    <div id="linksContainer">
+        <a href="./index.html" class="siteLink">←</a>
+    </div>
+    
+    <div class="container">
+        <h2>Gerenciamento de Curso</h2>
+        
+        <!-- Formulário de Curso -->
+        <form id="formularioCurso">
+            <label for="codigoCurso">Código do Curso <span class="campoObrigatorio">*</span>:</label>
+            <input placeholder="Código do Curso" type="text" id="codigoCurso" name="codigoCurso" maxlength="20" required>
+
+            <label for="nomeCurso">Nome do Curso <span class="campoObrigatorio">*</span>:</label>
+            <input placeholder="Nome do Curso" type="text" id="nomeCurso" name="nomeCurso" required>
+
+            <label for="siglaCurso">Sigla do Curso <span class="campoObrigatorio">*</span>:</label>
+            <input placeholder="Sigla do Curso" type="text" id="siglaCurso" name="siglaCurso" required>
+
+            <input type="submit" value="Adicionar Curso">
+            
+            <div id="mensagemSucessoCurso" style="display: none; color: green;">
+                Curso adicionado com sucesso!
+            </div>
+        </form>
+    </div>
+
+    <script>
+        function mostrarFormulario(formularioId) {
+            // Esconder todos os formulários
+            var todosFormularios = document.querySelectorAll('form');
+            todosFormularios.forEach(function(form) {
+                form.style.display = 'none';
+            });
+
+            // Mostrar apenas o formulário desejado
+            var formularioDesejado = document.getElementById(formularioId);
+            formularioDesejado.style.display = 'block';
+        }
+
+        document.getElementById('formularioCurso').addEventListener('submit', function (event) {
+            event.preventDefault();
+            document.getElementById('mensagemSucessoCurso').style.display = 'block';
+            // Resetar os valores do formulário após o envio
+            document.getElementById('codigoCurso').value = '';
+            document.getElementById('nomeCurso').value = '';
+            document.getElementById('siglaCurso').value = '';
+        });
+    </script>
+</body>
+</html>
