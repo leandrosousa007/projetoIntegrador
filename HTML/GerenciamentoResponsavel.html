@@ -8,7 +8,7 @@ body {
     justify-content: center;
     height: 100vh;
     margin: 0;
-    background-color: #d0f0c0; /* Cor verde pastel */
+    background: linear-gradient(to bottom right, #5E17EB, #7e29a5,#F790F4);
     font-family: 'Roboto', sans-serif;
 }
 
@@ -23,8 +23,7 @@ body {
     margin-right: 20px;
     text-decoration: none;
     color: white;
-    background-color: #4caf50; /* Cor verde */
-    padding: 5px 10px;
+    background: black;    padding: 5px 10px;
     border-radius: 5px;
 }
 
@@ -79,8 +78,9 @@ input {
     </div>
     
     <div class="container">
-        <h2>Insira os dados do Responsavel</h2>
-        <form id="formularioResponsavel">
+
+        <form id="formularioResponsavel">       
+            <h2>Insira os dados do Responsavel</h2><br>
             <label for="cod_responsavel">Código do Responsável <span class="campoObrigatorio">*</span>:</label>
             <input placeholder="Número inteiro" type="text" id="cod_responsavel" name="cod_responsavel" maxlength="20" required>
             <div class="mensagemErro" id="erroCodResponsavel"></div>

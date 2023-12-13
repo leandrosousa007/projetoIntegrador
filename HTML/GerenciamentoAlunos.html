@@ -6,11 +6,12 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 100vh;
+    height: 100%;
     margin: 0;
-    background-color: #d0f0c0; /* Cor verde pastel */
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background: linear-gradient(to bottom right, #5E17EB, #7e29a5,#F790F4); /* Gradiente de cores */
     font-family: 'Roboto', sans-serif;
-    
 }
 
 #linksContainer {
@@ -24,13 +25,13 @@ body {
     margin-right: 20px;
     text-decoration: none;
     color: white;
-    background-color: #4caf50; /* Cor verde */
+    background: black;
     padding: 5px 10px;
     border-radius: 5px;
 }
 
 form {
-    background-color: white;
+    background: white; /* Alterado para usar o fundo branco */
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -69,6 +70,13 @@ input {
 
 /* Adicione estilos específicos para a tabela de Alunos abaixo desta linha */
 
+.tabela {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Adiciona sombra nas bordas da tabela/div */
+}
+
+/* ... Outros estilos para a tabela ... */
+
+
 </style>
 
 <meta charset="UTF-8">
@@ -83,9 +91,9 @@ input {
     </div>
     
     <div class="container">
-        <h2>Insira os dados do Aluno</h2>
+        
         <form id="formularioAluno">
-            
+           <h2>Insira os dados do Aluno</h2> 
             <label for="cod_aluno">Código do Aluno <span class="campoObrigatorio">*</span>:</label>
             <input placeholder="Número inteiro" type="text" id="cod_aluno" name="cod_aluno" maxlength="20" required>
             <div class="mensagemErro" id="erroCodAluno"></div>

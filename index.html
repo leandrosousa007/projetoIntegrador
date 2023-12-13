@@ -1,44 +1,70 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Índice</title>
+    <title>Gerenciamento Total</title>
     <style>
         body {
             font-family: 'Roboto', sans-serif;
             text-align: center;
-            background-color: #d0f0c0; /* Cor verde pastel */
+            background: linear-gradient(to bottom right, #5E17EB, #d318cd);
             margin: 0;
             padding: 0;
+            background-attachment: fixed;
+            display: flex;
+            flex-direction: column;
+            position: relative;
         }
 
-        h2 {
-            color: #333;
+        h3 {
+            color: #ffffff;
         }
 
         #linksContainer {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
+            z-index: 1;
+            margin-top: 20vh; /* Ajuste conforme necessário */
         }
 
         .siteLink {
             margin: 10px;
             padding: 10px;
-            background-color: #4caf50;
+            background: black;
             color: white;
             text-decoration: none;
             border-radius: 5px;
             cursor: pointer;
         }
+
+        .oi {
+            background-color: rgb(0, 0, 0);
+            width: 17%;
+            height: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            top: 30%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 2;
+            border-radius: 5px;
+        }
     </style>
 </head>
+
 <body>
-    <h2>Índice de Sites</h2>
+    <div class="oi">
+        <h3>Gerenciamento Total</h3>
+    </div>
 
     <div id="linksContainer">
-        
+        <!-- Adicione links para outros sites aqui -->
         <a href="HTML/GerenciamentoAlunos.html" class="siteLink">Gerenciamento de Alunos</a>
         <a href="HTML/GerenciamentoResponsavel.html" class="siteLink">Gerenciamento de Responsável</a>
         <a href="HTML/GerenciamentoFuncionario.html" class="siteLink">Gerenciamento de Funcionários</a>

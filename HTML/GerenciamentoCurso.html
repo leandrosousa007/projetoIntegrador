@@ -8,7 +8,7 @@ body {
     justify-content: center;
     height: 100vh;
     margin: 0;
-    background-color: #d0f0c0; /* Cor verde pastel */
+    background: linear-gradient(to bottom right, #5E17EB, #7e29a5,#F790F4);
     font-family: 'Roboto', sans-serif;
 }
 
@@ -23,8 +23,7 @@ body {
     margin-right: 20px;
     text-decoration: none;
     color: white;
-    background-color: #4caf50; /* Cor verde */
-    padding: 5px 10px;
+    background: black;    padding: 5px 10px;
     border-radius: 5px;
 }
 
@@ -77,10 +76,11 @@ input, select {
     </div>
     
     <div class="container">
-        <h2>Gerenciamento de Curso</h2>
         
         <!-- Formulário de Curso -->
         <form id="formularioCurso">
+            <h2>Gerenciamento de Curso</h2><br>
+
             <label for="codigoCurso">Código do Curso <span class="campoObrigatorio">*</span>:</label>
             <input placeholder="Código do Curso" type="text" id="codigoCurso" name="codigoCurso" maxlength="20" required>
 
