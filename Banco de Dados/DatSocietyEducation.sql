@@ -59,7 +59,9 @@ FOREIGN KEY(cod_aluno) REFERENCES Aluno(cod_aluno) ON DELETE CASCADE
 CREATE TABLE Funcionario (
     cod_funcionario int auto_increment PRIMARY KEY,
     nome varchar(50),
-    cargo varchar(50)
+    cargo varchar(50),
+    login varchar(11),
+    senha varchar(20)
 );
 
 CREATE TABLE Ocorrencia (
@@ -149,12 +151,13 @@ values("2020-12-25",1,2),
 ("2020-09-18",5,6);
 
 
-insert into Funcionario(nome,cargo)
-values("José Almeida","Jardineiro"),
-("Gabriel Souza","Cozinheiro"),
-("Lara","Diretora"),
-( "Cricia","Supervisora"),
-( "Samia","Coordenadora");
+insert into Funcionario(nome,cargo,login,senha)
+values("José Almeida","Jardineiro","jose","jose123"),
+("Gabriel Souza","Cozinheiro","gabriel","gabriel123"),
+("Lara","Diretora","lara","lara123"),
+( "Cricia","Supervisora","cricia","cricia123"),
+( "Samia","Coordenadora","samia","samia123"),
+( "Sansa Education","root","sansa","sansa123");
 
 
 
@@ -182,3 +185,4 @@ values("Advertência escrita", "2022-06-09", 0, 3),
 ("Advertencia escrita","2023-12-09",3 ,8 ),
 ("Chamar responsáveis","2023-05-28",1 ,9 ),
 ("Suspensão","2023-11-01", 2,10);
+
