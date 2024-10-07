@@ -88,6 +88,7 @@ CREATE TABLE Penalidade (
 FOREIGN KEY(cod_ocorrencia) REFERENCES Ocorrencia(cod_ocorrencia) ON DELETE CASCADE
 );
 
+    
 -- 2)
 
 
@@ -160,7 +161,6 @@ values("José Almeida","Jardineiro","jose","jose123"),
 ( "Sansa Education","root","sansa","sansa123");
 
 
-
 insert into Ocorrencia(campus,data_registro_ocorrencia,resolucao,data_acontecimento,descricao_ocorrencia,cod_aluno,cod_funcionario)
 values( "campus A", "2023-05-10", "Em andamento", "2023-05-11", "O aluno se envolveu em uma briga durante o intervalo", 1,1),
 ( "campus B", "2023-05-15", "Concluída", "2023-05-16", "Foi relatado que o aluno estava envolvido em uma atividade de bullying", 2,1),
@@ -185,4 +185,5 @@ values("Advertência escrita", "2022-06-09", 0, 3),
 ("Advertencia escrita","2023-12-09",3 ,8 ),
 ("Chamar responsáveis","2023-05-28",1 ,9 ),
 ("Suspensão","2023-11-01", 2,10);
+
 
