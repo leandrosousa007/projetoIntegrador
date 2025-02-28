@@ -43,17 +43,6 @@ public class Curso{
         this.nome_curso = nome_curso;
     }
     
-    public String getCursoInfo() {
-        return cod_curso + " - " + nome_curso;
-    
-    }
-    
-    @Override
-    public String toString(){
-        return getCursoInfo();
-    
-    }
-    
     
  
     }

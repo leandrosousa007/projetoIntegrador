@@ -55,20 +55,20 @@ public class InserirAluno extends javax.swing.JFrame {
         jLabel12 = new javax.swing.JLabel();
         endereco = new javax.swing.JTextField();
         rg = new javax.swing.JTextField();
+        cod_curso = new javax.swing.JTextField();
         data_nasc = new javax.swing.JFormattedTextField();
+        cod_resp = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
         jLabel13 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
-        curso = new javax.swing.JComboBox<>();
 
         jLabel6.setText("jLabel6");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
 
-        jLabel7.setText("Curso:");
+        jLabel7.setText("Codigo Curso:");
 
         jButton2.setText("Fechar");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -79,7 +79,7 @@ public class InserirAluno extends javax.swing.JFrame {
 
         jLabel2.setText("Nome:");
 
-        jLabel8.setText("Responsável:");
+        jLabel8.setText("Codigo Responsável:");
 
         jLabel3.setText("Email:");
 
@@ -122,6 +122,12 @@ public class InserirAluno extends javax.swing.JFrame {
             }
         });
 
+        cod_resp.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cod_respActionPerformed(evt);
+            }
+        });
+
         jButton1.setText("Inserir");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -133,12 +139,6 @@ public class InserirAluno extends javax.swing.JFrame {
         jLabel1.setText("Inserir Aluno");
 
         jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/1copi.png"))); // NOI18N
-
-        curso.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cursoActionPerformed(evt);
-            }
-        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -166,7 +166,7 @@ public class InserirAluno extends javax.swing.JFrame {
                             .addComponent(jSeparator1))
                         .addContainerGap())
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jButton1)
                                 .addGap(18, 18, 18)
@@ -174,37 +174,31 @@ public class InserirAluno extends javax.swing.JFrame {
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel11)
-                                    .addComponent(jLabel10))
+                                    .addComponent(jLabel10)
+                                    .addComponent(jLabel8))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(matricula, javax.swing.GroupLayout.DEFAULT_SIZE, 106, Short.MAX_VALUE)
+                                    .addComponent(cod_resp)
                                     .addComponent(data_nasc))
                                 .addGap(25, 25, 25)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel9)
+                                    .addComponent(jLabel7)
                                     .addComponent(jLabel12))
-                                .addGap(66, 66, 66)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(rg, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(sexo, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(118, 118, 118))
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                .addComponent(jLabel8)
                                 .addGap(18, 18, 18)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(curso, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jComboBox1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                                    .addComponent(rg, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                        .addComponent(sexo, javax.swing.GroupLayout.Alignment.LEADING, 0, 98, Short.MAX_VALUE)
+                                        .addComponent(cod_curso))))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(118, 118, 118)))
                         .addGap(0, 21, Short.MAX_VALUE))))
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(140, 140, 140)
-                        .addComponent(jLabel13))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabel7)))
+                .addGap(140, 140, 140)
+                .addComponent(jLabel13)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -248,18 +242,16 @@ public class InserirAluno extends javax.swing.JFrame {
                             .addComponent(jLabel9))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(cod_resp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel8)
-                            .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(jLabel7)
+                            .addComponent(cod_curso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addComponent(sexo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel7)
-                    .addComponent(curso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(12, 12, 12)
+                .addGap(49, 49, 49)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton1)
                     .addComponent(jButton2))
-                .addContainerGap(11, Short.MAX_VALUE))
+                .addContainerGap(14, Short.MAX_VALUE))
         );
 
         pack();
@@ -280,6 +272,10 @@ public class InserirAluno extends javax.swing.JFrame {
     private void data_nascActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_data_nascActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_data_nascActionPerformed
+
+    private void cod_respActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cod_respActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cod_respActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         Aluno alunos = new Aluno();
@@ -310,23 +306,11 @@ public class InserirAluno extends javax.swing.JFrame {
         endereco.setText("");
         sexo.setSelectedIndex(0);
         data_nasc.setText("");
-        cod_curso.setSelectedIndex(0);
-        cod_resp.setSelectedIndex(0);
+        cod_curso.setText("");
+        cod_resp.setText("");
 
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
-
-    private void cursoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cursoActionPerformed
-     if(curso.getSelectedIndex() < 0){
-            JOptionPane.showMessageDialog(null, "Selecionar um cliente");
-    }    else{
-            String[] res = curso.getSelectedItem().toString().split(" - ");
-            Curso curso = con.consultarCursoPorCodigo(Integer.parseInt(res[0]));
-            nomei.setText(curso.getNome_curso());
-            siglai.setText(curso.getSigla());
-            
-        }           // TODO add your handling code here:
-    }//GEN-LAST:event_cursoActionPerformed
 
 
         
@@ -344,13 +328,13 @@ public class InserirAluno extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JComboBox<String> curso;
+    private javax.swing.JTextField cod_curso;
+    private javax.swing.JTextField cod_resp;
     private javax.swing.JFormattedTextField data_nasc;
     private javax.swing.JTextField email;
     private javax.swing.JTextField endereco;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
-    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;

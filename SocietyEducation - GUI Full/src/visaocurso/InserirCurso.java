@@ -142,12 +142,10 @@ public class InserirCurso extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
                                                    
-        Curso cursos = new Curso();// é so colocar o nome da sua tabela
-        
+        Curso cursos = new Curso();
         cursos.setNome_curso(nome_curso.getText());
-        cursos.setSigla(sigla.getText());// colocando os dados da sua table
-        
-        CursoControle ins = new CursoControle(); //troca curso pelo nome da sua tabela
+        cursos.setSigla(sigla.getText());
+        CursoControle ins = new CursoControle();
         String res = ins.inserirCurso(cursos);
         JOptionPane.showMessageDialog(null, res);
         nome_curso.setText("");
@@ -172,11 +170,11 @@ public class InserirCurso extends javax.swing.JFrame {
      */
     public static void main(String[] args) throws UnsupportedLookAndFeelException {
             
-           // UIManager.setLookAndFeel(new FlatSpacegrayIJTheme());
+            UIManager.setLookAndFeel(new FlatSpacegrayIJTheme());
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new InserirCurso().setVisible(true);
-            }// troca pela da sua tabela,
+            }
         });
     }
   

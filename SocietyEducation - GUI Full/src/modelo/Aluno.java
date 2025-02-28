@@ -1,7 +1,15 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
 package modelo;
 
 import java.time.LocalDate;
 
+/**
+ *
+ * @author leand
+ */
 public class Aluno {
     private int cod_aluno;
     private String matricula;
@@ -12,8 +20,8 @@ public class Aluno {
     private String endereco;
     private char sexo;
     private LocalDate data_nasc;
-    private Curso curso;
-    private Responsavel responsavel;
+    private int cod_curso;
+    private int cod_resp;
 
     public int getCod_aluno() {
         return cod_aluno;
@@ -87,23 +95,23 @@ public class Aluno {
         this.data_nasc = data_nasc;
     }
 
-    public Curso getCurso() {
-        return curso;
+    public int getCod_curso() {
+        return cod_curso;
     }
 
-    public void setCurso(Curso curso) {
-        this.curso = curso;
+    public void setCod_curso(int cod_curso) {
+        this.cod_curso = cod_curso;
     }
 
-    public Responsavel getResponsavel() {
-        return responsavel;
+    public int getCod_resp() {
+        return cod_resp;
     }
 
-    public void setResponsavel(Responsavel responsavel) {
-        this.responsavel = responsavel;
+    public void setCod_resp(int cod_resp) {
+        this.cod_resp = cod_resp;
     }
 
-    public Aluno(int cod_aluno, String matricula, String nome, String rg, String email, String telefone, String endereco, char sexo, LocalDate data_nasc, Curso curso, Responsavel responsavel) {
+    public Aluno(int cod_aluno, String matricula, String nome, String rg, String email, String telefone, String endereco, char sexo, LocalDate data_nasc, int cod_curso, int cod_resp) {
         this.cod_aluno = cod_aluno;
         this.matricula = matricula;
         this.nome = nome;
@@ -113,8 +121,8 @@ public class Aluno {
         this.endereco = endereco;
         this.sexo = sexo;
         this.data_nasc = data_nasc;
-        this.curso = curso;
-        this.responsavel = responsavel;
+        this.cod_curso = cod_curso;
+        this.cod_resp = cod_resp;
     }
 
     public Aluno(int cod_aluno) {
@@ -123,4 +131,9 @@ public class Aluno {
 
     public Aluno() {
     }
+
+
+
 }
+
+
